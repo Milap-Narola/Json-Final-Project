@@ -13,8 +13,8 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-  <link rel="stylesheet" href="/Final-Project/css/style.css">
-  <link rel="stylesheet" href="/Final-Project/css/order.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/order.css">
 </head>
 
 <body>
@@ -28,24 +28,26 @@
   <header id="header" class=" d-flex align-items-center ">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <div class="logo me-auto">
-        <h1><a href="/Final-Project/html/index.html">Milap's Cuisine</a></h1>
+        <h1><a href="/html/index.html">Milap's Cuisine</a></h1>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="/Final-Project/html/index.html#home">Home</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#menu">Menu</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#events">Events</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#gallery">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#contact">Contact</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/order.html#">Your Order</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/html/order.html">Your Order</a></li>
+          <li><a class="nav-link scrollto" id="login-link" href="/html/login.html">login</a></li>
+          <li><a class="nav-link scrollto" id="signup-link" href="/html/signup.html">signup</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
 
-      <a href="/Final-Project/html/index.html#book-a-table" class="book-a-table-btn scrollto">Book a table</a>
+      <a href="/html/index.html#book-a-table" class="book-a-table-btn scrollto">Book a table</a>
     </div>
   </header>
 
@@ -54,8 +56,7 @@
     <div id="order-container">
     </div>
     <p id="grand-total">Grand Total: $0.00</p>
-    <button id="checkout-button"
-      class="btn btn-success rounded-5 text-center">Checkout</button>
+    <button id="checkOut"  class="btn btn-success rounded-5 text-center">Checkout</button>
   </div>
 
   <br>
@@ -85,6 +86,8 @@
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-<script src="/Final-Project/js/order.js"></script>
+<script src="/js/order.js"></script>
+<!-- <script src="/js/index.js"></script> -->
+
 
 </html>

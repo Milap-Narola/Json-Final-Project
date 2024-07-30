@@ -14,7 +14,7 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="/Final-Project/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <style>
   body {
@@ -33,27 +33,27 @@
   <header id="header" class=" d-flex align-items-center fixed-top topbar-transparent">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <div class="logo me-auto">
-        <h1><a href="/Final-Project/html/index.html">Milap's Cuisine</a></h1>
+        <h1><a href="/html/index.html">Milap's Cuisine</a></h1>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="/Final-Project/html/index.html#home">Home</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#menu">Menu</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#events">Events</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#gallery">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/index.html#contact">Contact</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/order.html#">Your Order</a></li>
+          <li><a class="nav-link scrollto active" href="/html/index.html#home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/html/order.html#">Your Order</a></li>
 
-          <li><a class="nav-link scrollto" href="/Final-Project/html/login.html">${login}</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/signup.html">${signup}</a></li>
+          <li><a class="nav-link scrollto" id="login-link" href="/html/login.html">login</a></li>
+          <li><a class="nav-link scrollto" id="signup-link" href="/html/signup.html">signup</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
 
-      <a href="/Final-Project/html/index.html#book-a-table" class="book-a-table-btn scrollto">Book a table</a>
+      <a href="/html/index.html#book-a-table" class="book-a-table-btn scrollto">Book a table</a>
     </div>
   </header>
 
@@ -64,18 +64,17 @@
       alt="logo">
     <div class="mx-auto  px-5 d-flex justify-content-around border-black text-center">
 
-      <form id="loginForm " class="py-5 ">
+      <form id="loginForm" class="py-5 ">
         <input type="text" id="userName" placeholder="username"
           class="form-control text-center fw-bold rounded-5 px-5  ">
         <br><br>
         <input type="text" id="password" placeholder="password"
           class="form-control text-center fw-bold rounded-5 px-5 ">
         <br><br>
-        <button type="submit" id="" class=" btn btn-outline-danger px-5  fw-bold rounded-pill"
-          placeholder="email address" aria-label="Last name">Login</button>
+        <button type="submit" id="" class=" btn btn-outline-danger px-5  fw-bold rounded-pill">Login</button>
         <p class=" fw-bold  text-light m-4 ">__________ OR __________</p>
         <a href="" class="fw-bold m-1 text-light">Forgot password? <span class="text-light"> ||</span></a>
-        <a href="/Final-Project/html/signup.html" class="fw-bold text-light ">Create an account</a>
+        <a href="/html/signup.html" class="fw-bold text-light ">Create an account</a>
         <br>
         <a data-mdb-ripple-init class="btn btn-primary my-3" style="background-color: #3b5998" href="#!" role="button">
           <i class="fa-brands fa-facebook"></i>
@@ -90,6 +89,7 @@
     </div>
   </div>
 </body>
-<script type="module" src="/Final-Project/js/login.js"></script>
+<script type="module" src="/js/login.js"></script>
+<!-- <script src="/js/index.js"></script> -->
 
 </html>

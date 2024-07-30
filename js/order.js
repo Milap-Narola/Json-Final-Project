@@ -1,12 +1,71 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const isLogin = localStorage.getItem('isLogin');
+    if (!isLogin) {
+        window.location.href = '/html/login.html';
+    } else {
+        const user = JSON.parse(localStorage.getItem('user'));
+        updateNavbar("logout", user.username);
+    }
+});
+
+const updateNavbar = (status, username) => {
+    let navbarHTML;
+    if (status === "logout") {
+        navbarHTML = `
+            <ul>
+          <li><a class="nav-link scrollto" href="/html/index.html#home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/html/order.html">Your Order</a></li>
+                <li><a class="nav-link" href="#" id="logout-link">Logout (${username})</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        `;
+    } else {
+        navbarHTML = `
+            <ul>
+          <li><a class="nav-link scrollto" href="/html/index.html#home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="/html/index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/html/order.html">Your Order</a></li>
+                <li><a class="nav-link scrollto" id="login-link" href="/html/login.html">Login</a></li>
+                <li><a class="nav-link scrollto" id="signup-link" href="/html/signup.html">Signup</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        `;
+    }
+    document.getElementById("navbar").innerHTML = navbarHTML;
+};
+
+document.getElementById('navbar').addEventListener('click', (event) => {
+    if (event.target.id === 'logout-link') {
+        localStorage.removeItem('isLogin');
+        localStorage.removeItem('user');
+        window.location.href = '/html/login.html';
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', async (e) => {
     e.preventDefault();
-    const orderContainer = document.getElementById('order-container');
-    const grandTotalElement = document.getElementById('grand-total');
-
-    if (!orderContainer) {
-        console.error('Order container not found!');
-        return;
-    }
+    let orderContainer = document.getElementById('order-container');
+    let grandTotal = document.getElementById('grand-total');
+    let checkout = document.getElementById('checkOut');
 
     const calculateGrandTotal = (orders) => {
         return orders.reduce((total, order) => {
@@ -18,38 +77,41 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 
     const updateGrandTotal = async () => {
         try {
-            const response = await fetch('http://localhost:3000/orders');
+            const response = await fetch(`http://localhost:3000/cart`);
             const orders = await response.json();
-            grandTotalElement.innerHTML = `Grand Total: $${calculateGrandTotal(orders)}`;
+            grandTotal.innerHTML = `Grand Total: $${calculateGrandTotal(orders)}`;
         } catch (error) {
             console.error('Error:', error);
         }
     };
 
-    const orderMaker = (orders) => {
+    const renderCartItems = (orders) => {
         orderContainer.innerHTML = '';
 
         orders.forEach(order => {
-            const quantity = order.quantity || 1; // Ensure quantity is at least 1
+            const quantity = order.quantity || 1;
             const pricePerItem = parseFloat(order.price);
 
-            let orderImg = document.createElement("img");
+            const orderDiv = document.createElement("div");
+            orderDiv.classList.add('order-item');
+
+            const orderImg = document.createElement("img");
             orderImg.src = order.image;
             orderImg.alt = order.name;
             orderImg.classList.add('order-img');
 
-            let orderName = document.createElement("h3");
-            orderName.innerHTML = order.name;
+            const orderName = document.createElement("h3");
+            orderName.textContent = order.name;
 
-            let orderPrice = document.createElement("p");
+            const orderPrice = document.createElement("p");
             orderPrice.innerHTML = `Price: $<span class="price">${(pricePerItem * quantity).toFixed(2)}</span>`;
             orderPrice.setAttribute('data-price', pricePerItem);
 
-            let orderQuantity = document.createElement("p");
+            const orderQuantity = document.createElement("p");
             orderQuantity.innerHTML = `Quantity: <span class="quantity">${quantity}</span>`;
 
-            let increaseBtn = document.createElement("button");
-            increaseBtn.innerHTML = "+";
+            const increaseBtn = document.createElement("button");
+            increaseBtn.textContent = "+";
             increaseBtn.classList.add("increase-quantity", "btn", "btn-success");
             increaseBtn.setAttribute("data-id", order.id);
 
@@ -66,7 +128,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
                 priceElement.textContent = (originalPrice * quantity).toFixed(2);
 
                 try {
-                    await fetch(`http://localhost:3000/orders/${id}`, {
+                    await fetch(`http://localhost:3000/cart/${id}`, {
                         method: 'PATCH',
                         headers: {
                             'Content-Type': 'application/json'
@@ -79,8 +141,8 @@ document.addEventListener('DOMContentLoaded', async (e) => {
                 }
             });
 
-            let decreaseBtn = document.createElement("button");
-            decreaseBtn.innerHTML = "-";
+            const decreaseBtn = document.createElement("button");
+            decreaseBtn.textContent = "-";
             decreaseBtn.classList.add("decrease-quantity", "btn", "btn-warning");
             decreaseBtn.setAttribute("data-id", order.id);
 
@@ -95,7 +157,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
                 quantity -= 1;
                 if (quantity <= 0) {
                     try {
-                        await fetch(`http://localhost:3000/orders/${id}`, {
+                        await fetch(`http://localhost:3000/cart/${id}`, {
                             method: 'DELETE'
                         });
                         orderItemDiv.remove();
@@ -108,7 +170,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
                     priceElement.textContent = (originalPrice * quantity).toFixed(2);
 
                     try {
-                        await fetch(`http://localhost:3000/orders/${id}`, {
+                        await fetch(`http://localhost:3000/cart/${id}`, {
                             method: 'PATCH',
                             headers: {
                                 'Content-Type': 'application/json'
@@ -122,8 +184,8 @@ document.addEventListener('DOMContentLoaded', async (e) => {
                 }
             });
 
-            let removeBtn = document.createElement("button");
-            removeBtn.innerHTML = "Remove";
+            const removeBtn = document.createElement("button");
+            removeBtn.textContent = "Remove";
             removeBtn.classList.add("remove-order", "btn", "btn-danger");
             removeBtn.setAttribute("data-id", order.id);
 
@@ -131,7 +193,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
                 const id = event.target.getAttribute('data-id');
                 const orderItemDiv = event.target.closest('.order-item');
                 try {
-                    await fetch(`http://localhost:3000/orders/${id}`, {
+                    await fetch(`http://localhost:3000/cart/${id}`, {
                         method: 'DELETE'
                     });
                     orderItemDiv.remove();
@@ -141,35 +203,35 @@ document.addEventListener('DOMContentLoaded', async (e) => {
                 }
             });
 
-            let orderDiv = document.createElement("div");
-            orderDiv.classList.add('order-item');
-
             orderDiv.append(orderImg, orderName, orderPrice, orderQuantity, increaseBtn, decreaseBtn, removeBtn);
             orderContainer.append(orderDiv);
         });
     };
 
-    try {
-        const response = await fetch('http://localhost:3000/orders');
-        const orders = await response.json();
-        orderMaker(orders);
-        grandTotalElement.innerHTML = `Grand Total: $${calculateGrandTotal(orders)}`;
+    const fetchAndDisplayCart = async () => {
+        try {
+            const response = await fetch(`http://localhost:3000/cart`);
+            const orders = await response.json();
+            renderCartItems(orders);
+            updateGrandTotal();
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
-        const checkoutButton = document.getElementById('checkout-button');
-        checkoutButton.addEventListener('click', async () => {
-            try {
-                await fetch('http://localhost:3000/orders', {
-                    method: 'DELETE'
-                });
-                alert('Your order is successfully done!');
-                orderContainer.innerHTML = ''; // Clear the order container
-                grandTotalElement.innerHTML = 'Grand Total: $0.00'; // Reset the grand total
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        });
+    // Event listener for checkout button
+    checkout.addEventListener('click', async () => {
+        try {
+            await fetch(`http://localhost:3000/cart`, {
+                method: 'DELETE'
+            });
+            alert('Your order is Done!');
+            orderContainer.innerHTML = ''; // Clear the order container
+            grandTotal.innerHTML = 'Grand Total: $0.00'; // Reset the grand total
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
 
-    } catch (error) {
-        console.error('Error:', error);
-    }
+    fetchAndDisplayCart();
 });

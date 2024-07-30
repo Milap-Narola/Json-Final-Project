@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css" />
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
   <!-- Template Main CSS File -->
-  <link href="/Final-Project/css/style.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -42,7 +42,7 @@
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <div class="logo me-auto">
-        <h1><a href="/Final-Project/html/index.html">Milap's Cuisine</a></h1>
+        <h1><a href="/html/index.html">Milap's Cuisine</a></h1>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
@@ -53,9 +53,9 @@
           <li><a class="nav-link scrollto" href="#events">Events</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/order.html">Your Order</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/login.html">${login}</a></li>
-          <li><a class="nav-link scrollto" href="/Final-Project/html/signup.html">${signup}</a></li>
+          <li><a class="nav-link scrollto" href="/html/order.html">Your Order</a></li>
+          <li><a class="nav-link scrollto" id="login-link" href="/html/login.html">login</a></li>
+          <li><a class="nav-link scrollto" id="signup-link" href="/html/signup.html">signup</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -73,7 +73,7 @@
         <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url(/Final-Project/assets/img/slide/slide-1.jpg)">
+          <div class="carousel-item active" style="background-image: url(/assets/img/slide/slide-1.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">
@@ -91,7 +91,7 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url(/Final-Project/assets/img/slide/slide-2.jpg)">
+          <div class="carousel-item" style="background-image: url(/assets/img/slide/slide-2.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">
@@ -113,7 +113,7 @@
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url(/Final-Project/assets/img/slide/slide-3.jpg)">
+          <div class="carousel-item" style="background-image: url(/assets/img/slide/slide-3.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">
@@ -178,7 +178,7 @@
 
           <div class="col-lg-6 d-flex align-items-stretch">
             <div class="img-fluid ">
-              <img src="/Final-Project/assets/img/events/event-birthday.jpg" alt="" class="w-100" />
+              <img src="/assets/img/events/event-birthday.jpg" alt="" class="w-100" />
 
             </div>
 
@@ -209,7 +209,7 @@
 
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-6 menu-item filter-drinks">
-            <img src="../assets/img/menu/schweppes-tonic.jpg" class="menu-img" alt="" />
+            <img src="/assets/img/menu/schweppes-tonic.jpg" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#"> Schweppes Tonic</a><span>5.0 $</span>
@@ -217,14 +217,13 @@
               <div class="menu-ingredients">
                 fresh water,strong water
               </div>
-              <button class="select-item btn btn-success" data-name="Schweppes Tonic" data-price="5.0"
-                data-img="../assets/img/menu/schweppes-tonic.jpg">Order
+              <button class="select-item btn btn-success" data-id="1">Order
                 Now</button>
             </div>
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="/Final-Project/assets/img/menu/cleopatra.jfif" class="menu-img" alt="" />
+            <img src="/assets/img/menu/cleopatra.jfif" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#">Cleopatra</a><span>32.0 $</span>
@@ -233,13 +232,12 @@
                 Fillet Of Sea Bream On A Bed Of Prawns, Shrimps, Mushrooms,
                 Basil Leaves, Zucchinis
               </div>
-              <button class="select-item btn btn-success" data-name="Cleopatra" data-price="32.0"
-                data-img="/Final-Project/assets/img/menu/cleopatra.jfif">Order Now</button>
+              <button class="select-item btn btn-success" data-id="2">Order Now</button>
             </div>
           </div>
 
           <div class="col-lg-6 menu-item filter-drinks">
-            <img src="/Final-Project/assets/img/menu/juice.jpeg" class="menu-img" alt="" />
+            <img src="/assets/img/menu/juice.jpeg" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#">Fresh Orange Juice</a><span>7.0 $</span>
@@ -247,14 +245,13 @@
               <div class="menu-ingredients">
                 fresh Orange ,Zero sugar
               </div>
-              <button class="select-item btn btn-success" data-name="Fresh Orange Juice" data-price="7.0"
-                data-img="/Final-Project/assets/img/menu/juice.jpeg">Order
+              <button class="select-item btn btn-success" data-id="3">Order
                 Now</button>
             </div>
           </div>
 
           <div class="col-lg-6 menu-item filter-salads">
-            <img src="/Final-Project/assets/img/menu/caesar.jpg" class="menu-img" alt="" />
+            <img src="/assets/img/menu/caesar.jpg" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#">Caesar Salad</a>
@@ -263,13 +260,12 @@
               <div class="menu-ingredients">
                 Heart of Lettuce, Cherry Tomatoes, Grilled , Parmesan.
               </div>
-              <button class="select-item btn btn-success" data-name="Caesar Salad" data-price="24.0"
-                data-img="/Final-Project/assets/img/menu/caesar.jpg">Order Now</button>
+              <button class="select-item btn btn-success" data-id="4">Order Now</button>
             </div>
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="/Final-Project/assets/img/menu/beffy.jpg" class="menu-img" alt="" />
+            <img src="/assets/img/menu/beffy.jpg" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#">Beffy</a><span>24.0 $</span>
@@ -277,13 +273,12 @@
               <div class="menu-ingredients">
                 Tomato Sauce, Ground Meat, Garlic, Chili Flakes, Parsley.
               </div>
-              <button class="select-item btn btn-success" data-name="Beffy" data-price="24.0"
-                data-img="/Final-Project/assets/img/menu/beffy.jpg">Order Now</button>
+              <button class="select-item btn btn-success" data-id="5">Order Now</button>
             </div>
           </div>
 
           <div class="col-lg-6 menu-item filter-drinks">
-            <img src="/Final-Project/assets/img/menu/mojito.jpg" class="menu-img" alt="" />
+            <img src="/assets/img/menu/mojito.jpg" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#">Mojito</a><span>8.0 $</span>
@@ -291,13 +286,12 @@
               <div class="menu-ingredients">
                 Fresh Mojito, Mint leaf, Lemon
               </div>
-              <button class="select-item btn btn-success" data-name="Mojito" data-price="8.0"
-                data-img="/Final-Project/assets/img/menu/mojito.jpg">Order Now</button>
+              <button class="select-item btn btn-success" data-id="6">Order Now</button>
             </div>
           </div>
 
           <div class="col-lg-6 menu-item filter-salads">
-            <img src="/Final-Project/assets/img/menu/nut-salad.jpg" class="menu-img" alt="" />
+            <img src="/assets/img/menu/nut-salad.jpg" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#">Nut Salad</a><span>25.0 $</span>
@@ -307,13 +301,12 @@
                 Cheese, Nut sauce, Balsamic.
               </div>
 
-              <button class="select-item btn btn-success" data-name="Nut Salad" data-price="25.0"
-                data-img="/Final-Project/assets/img/menu/nut-salad.jpg">Order Now</button>
+              <button class="select-item btn btn-success" data-id="7">Order Now</button>
             </div>
           </div>
 
           <div class="col-lg-6 menu-item filter-salads">
-            <img src="/Final-Project/assets/img/menu/burrata-salad.jpg" class="menu-img" alt="" />
+            <img src="/assets/img/menu/burrata-salad.jpg" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#">Burrata Salad</a><span>24.0 $</span>
@@ -323,13 +316,12 @@
                 Olive Oil, Dried Tomatoes
               </div>
 
-              <button class="select-item btn btn-success" data-name="Burrata Salad" data-price="24.0"
-                data-img="/Final-Project/assets/img/menu/burrata-salad.jpg">Order Now</button>
+              <button class="select-item btn btn-success" data-id="8">Order Now</button>
             </div>
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="/Final-Project/assets/img/menu/juicy.jpg" class="menu-img" alt="" />
+            <img src="/assets/img/menu/juicy.jpg" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#">Juicy</a><span>28.0 $</span>
@@ -338,13 +330,12 @@
                 Minced Meat, Fresh Tomato Sauce, Fresh Paris Marvel, Gratine
                 With Grilled Cheese.
               </div>
-              <button class="select-item btn btn-success" data-name="Juice" data-price="28.0"
-                data-img="/Final-Project/assets/img/menu/juicy.jpg">Order Now</button>
+              <button class="select-item btn btn-success" data-id="9">Order Now</button>
             </div>
           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
-            <img src="/Final-Project/assets/img/menu/juicy.jpg" class="menu-img" alt="" />
+            <img src="/assets/img/menu/juicy.jpg" class="menu-img" alt="" />
             <div class="menu-item-details">
               <div class="menu-content">
                 <a href="#">Pasta Cream</a><span>28.0 $</span>
@@ -354,8 +345,7 @@
                 With Grilled Cheese.
               </div>
 
-              <button class="select-item btn btn-success" data-name="Pasta Cream" data-price="28.0"
-                data-img="/Final-Project/assets/img/menu/juicy.jpg">Order Now</button>
+              <button class="select-item btn btn-success" data-id="10">Order Now</button>
             </div>
           </div>
         </div>
@@ -375,7 +365,7 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6 d-lg-flex align-items-center">
-                  <img src="/Final-Project/assets/img/events/event-birthday.jpg" class="img-fluid" alt="" />
+                  <img src="/assets/img/events/event-birthday.jpg" class="img-fluid" alt="" />
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Birthday Celebrations</h3>
@@ -407,7 +397,7 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6 d-lg-flex align-items-center">
-                  <img src="/Final-Project/assets/img/events/event-holiday.jpg" class="img-fluid" alt="" />
+                  <img src="/assets/img/events/event-holiday.jpg" class="img-fluid" alt="" />
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Holiday Parties & More</h3>
@@ -443,7 +433,7 @@
             <div class="swiper-slide">
               <div class="row event-item">
                 <div class="col-lg-6 d-lg-flex align-items-center">
-                  <img src="/Final-Project/assets/img/events/event-baby.jpg" class="img-fluid" alt="" />
+                  <img src="/assets/img/events/event-baby.jpg" class="img-fluid" alt="" />
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content">
                   <h3>Baby & Bridal Showers</h3>
@@ -483,7 +473,7 @@
           <h2>Book a <span>Table</span></h2>
         </div>
 
-        <form role="form" class="email-form" id="bookingForm">
+        <form role="form" class="email-form" id="booking">
           <div class="row">
             <div class="col-lg-4 col-md-6 form-group">
               <input type="text" name="name" class="form-control" id="book-name" placeholder="Your Name"
@@ -520,13 +510,6 @@
             <textarea class="form-control" name="message" rows="5" placeholder="Message" id="book-message"></textarea>
             <div class="validate"></div>
           </div>
-          <div class="mb-3">
-            <div class="loading" style="display:none;">Loading</div>
-            <div class="error-message" style="display:none;"></div>
-            <div class="sent-message" style="display:none;">
-              Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!
-            </div>
-          </div>
           <div class="text-center">
             <button type="submit " class="btn btn-warning rounded-5 fw-bold text-light">Booking Now</button>
           </div>
@@ -545,64 +528,64 @@
         <div class="row g-2">
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="gallery-item">
-              <a href="/Final-Project/assets/img/gallery/gallery-2.jpg">
-                <img src="/Final-Project/assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid" />
+              <a href="/assets/img/gallery/gallery-2.jpg">
+                <img src="/assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid" />
               </a>
             </div>
           </div>
 
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="gallery-item">
-              <a href="/Final-Project/assets/img/gallery/gallery-3.jpg">
-                <img src="/Final-Project/assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid" />
+              <a href="/assets/img/gallery/gallery-3.jpg">
+                <img src="/assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid" />
               </a>
             </div>
           </div>
 
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="gallery-item">
-              <a href="/Final-Project/assets/img/gallery/gallery-7.jpg">
-                <img src="/Final-Project/assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid" />
+              <a href="/assets/img/gallery/gallery-7.jpg">
+                <img src="/assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid" />
               </a>
             </div>
           </div>
 
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="gallery-item">
-              <a href="/Final-Project/assets/img/gallery/gallery-4.jpg">
-                <img src="/Final-Project/assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid" />
+              <a href="/assets/img/gallery/gallery-4.jpg">
+                <img src="/assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid" />
               </a>
             </div>
           </div>
 
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="gallery-item">
-              <a href="/Final-Project/assets/img/gallery/gallery-7.jpg">
-                <img src="/Final-Project/assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid" />
+              <a href="/assets/img/gallery/gallery-7.jpg">
+                <img src="/assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid" />
               </a>
             </div>
           </div>
 
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="gallery-item">
-              <a href="/Final-Project/assets/img/gallery/gallery-6.jpg">
-                <img src="/Final-Project/assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid" />
+              <a href="/assets/img/gallery/gallery-6.jpg">
+                <img src="/assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid" />
               </a>
             </div>
           </div>
 
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="gallery-item">
-              <a href="/Final-Project/assets/img/events/event-holiday.jpg">
-                <img src="/Final-Project/assets/img/events/event-holiday.jpg" alt="" class="img-fluid" />
+              <a href="/assets/img/events/event-holiday.jpg">
+                <img src="/assets/img/events/event-holiday.jpg" alt="" class="img-fluid" />
               </a>
             </div>
           </div>
 
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="gallery-item">
-              <a href="/Final-Project/assets/img/gallery/gallery-8.jpg">
-                <img src="/Final-Project/assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid" />
+              <a href="/assets/img/gallery/gallery-8.jpg">
+                <img src="/assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid" />
               </a>
             </div>
           </div>
@@ -618,7 +601,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/Final-Project/assets/img/testimonials/bachir.jpg" class="testimonial-img" alt="" />
+                <img src="/assets/img/testimonials/bachir.jpg" class="testimonial-img" alt="" />
                 <h3>vimal</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <div class="stars">
@@ -638,7 +621,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/Final-Project/assets/img/testimonials/sywar.jpg" class="testimonial-img" alt="" />
+                <img src="/assets/img/testimonials/sywar.jpg" class="testimonial-img" alt="" />
                 <h3>Shyamla</h3>
                 <h4>Designer</h4>
                 <div class="stars">
@@ -657,7 +640,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/Final-Project/assets/img/testimonials/rahma.jpg" class="testimonial-img" alt="" />
+                <img src="/assets/img/testimonials/rahma.jpg" class="testimonial-img" alt="" />
                 <h3>Raman</h3>
                 <h4>Store Owner</h4>
                 <div class="stars">
@@ -677,7 +660,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/Final-Project/assets/img/testimonials/oussama.jpg" class="testimonial-img" alt="" />
+                <img src="/assets/img/testimonials/oussama.jpg" class="testimonial-img" alt="" />
                 <h3>Raju</h3>
                 <h4>Freelancer</h4>
                 <div class="stars">
@@ -697,7 +680,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/Final-Project/assets/img/testimonials/mehdi.jpg" class="testimonial-img" alt="" />
+                <img src="/assets/img/testimonials/mehdi.jpg" class="testimonial-img" alt="" />
                 <h3>Mubarak</h3>
                 <h4>Entrepreneur</h4>
                 <div class="stars">
@@ -756,7 +739,8 @@
                 </div>
               </div>
             </div>
-            <form role="form" class="email-form" id="Contact-Form">
+
+            <form role="form" class="email-form" id="contacts">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="user-name" placeholder="Your Name" />
@@ -804,12 +788,13 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
+      <script src="/js/index.js"></script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-<script src="/Final-Project/js/main.js"></script>
-<script src="/Final-Project/js/index.js"></script>
+<script src="/js/slider.js"></script>
+<!-- <script src="/js/order.js"></script> -->
 
 </html>
