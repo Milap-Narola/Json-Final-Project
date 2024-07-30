@@ -13,12 +13,12 @@ const updateNavbar = (status, username) => {
     if (status === "logout") {
         navbarHTML = `
             <ul>
-          <li><a class="nav-link scrollto" href="/html/index.html#home">Home</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#menu">Menu</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#events">Events</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#gallery">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="/html/order.html">Your Order</a></li>
                 <li><a class="nav-link" href="#" id="logout-link">Logout (${username})</a></li>
             </ul>
@@ -27,12 +27,12 @@ const updateNavbar = (status, username) => {
     } else {
         navbarHTML = `
             <ul>
-          <li><a class="nav-link scrollto" href="/html/index.html#home">Home</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#menu">Menu</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#events">Events</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#gallery">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="/html/index.html#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="/index.html#contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="/html/order.html">Your Order</a></li>
                 <li><a class="nav-link scrollto" id="login-link" href="/html/login.html">Login</a></li>
                 <li><a class="nav-link scrollto" id="signup-link" href="/html/signup.html">Signup</a></li>

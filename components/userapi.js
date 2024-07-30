@@ -80,7 +80,7 @@ export const createUser = async (user) => {
             body: JSON.stringify(user),
         });
         alert('User added successfully!');
-        window.location.href = "html/login.html";
+        window.location.href = "/html/login.html";
     }
 };
 
@@ -102,7 +102,7 @@ export const login = async (user) => {
         alert("Logged in successfully");
         localStorage.setItem("isLogin", true);
         localStorage.setItem("user", JSON.stringify(res[0]));
-        window.location.href = "/html/index.html";
+        window.location.href = "/index.html";
     }
     else if (res.length == 1 && res[0].password != user.password) {
    
